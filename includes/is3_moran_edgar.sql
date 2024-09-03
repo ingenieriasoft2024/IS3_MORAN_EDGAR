@@ -24,13 +24,6 @@ CREATE TABLE Coordenadas (
     FOREIGN KEY (coordenadas_ope_id) REFERENCES Operaciones(operaciones_id)
 );
 
--- Crear la tabla de OperacionesPorDependencia
-CREATE TABLE OperacionesDependencia (
-    total_ope_dep_id INT,
-    total_operaciones INT,
-    FOREIGN KEY (total_ope_dep_id) REFERENCES Dependencias(dependencia_id)
-);
-
 -- Crear la tabla de Roles
 CREATE TABLE Roles (
     rol_id SERIAL PRIMARY KEY,
@@ -100,44 +93,7 @@ VALUES (6, 15.5318012,-89.3406594);
 INSERT INTO Coordenadas (coordenadas_ope_id, coordenadas_latitud, coordenadas_longitud) 
 VALUES (7, 14.2788902,-89.9167455);
 
-INSERT INTO OperacionesDependencia (total_ope_dep_id, total_operaciones) 
-VALUES (1, 5);
-INSERT INTO OperacionesDependencia (total_ope_dep_id, total_operaciones) 
-VALUES (2, 8);
-INSERT INTO OperacionesDependencia (total_ope_dep_id, total_operaciones) 
-VALUES (3, 12);
-INSERT INTO OperacionesDependencia (total_ope_dep_id, total_operaciones) 
-VALUES (4, 7);
-INSERT INTO OperacionesDependencia (total_ope_dep_id, total_operaciones) 
-VALUES (5, 6);
-INSERT INTO OperacionesDependencia (total_ope_dep_id, total_operaciones) 
-VALUES (6, 10);
-INSERT INTO OperacionesDependencia (total_ope_dep_id, total_operaciones) 
-VALUES (7, 3);
 
--- Insertar roles en la tabla Roles
-INSERT INTO Roles (rol_nombre, rol_descripcion)
-VALUES ('Comando', 'Puede ver el estado de sus operaciones');
-INSERT INTO Roles (rol_nombre, rol_descripcion)
-VALUES ('EMDN', 'Puede ver estadísticas de operaciones y el mapa general de las operaciones');
-INSERT INTO Roles (rol_nombre, rol_descripcion)
-VALUES ('Administrador', 'Tiene acceso a todas las vistas');
-
--- Insertar usuarios en la tabla Usuarios
-INSERT INTO Usuarios (usu_nombre, usu_password, usu_rol_id, usu_dep_id)
-VALUES ('comando', 'hashed_password_comando', 1, 1); -- Usuario con rol Comando
-INSERT INTO Usuarios (usu_nombre, usu_password, usu_rol_id, usu_dep_id)
-VALUES ('EMDN', 'hashed_password_emdn', 2, 2); -- Usuario con rol EMDN
-INSERT INTO Usuarios (usu_nombre, usu_password, usu_rol_id, usu_dep_id)
-VALUES ('administrador', 'hashed_password_admin', 3, 3); -- Usuario con rol Administrador
-
--- Insertar permisos en la tabla Permisos
-INSERT INTO Permisos (permiso_rol, permiso_tipo)
-VALUES (1, 'Ver estado de operaciones'); -- Permiso para el rol Comando
-INSERT INTO Permisos (permiso_rol, permiso_tipo)
-VALUES (2, 'Ver estadísticas de operaciones y mapa general'); -- Permiso para el rol EMDN
-INSERT INTO Permisos (permiso_rol, permiso_tipo)
-VALUES (3, 'Ver todas las vistas'); 
 
 
 
