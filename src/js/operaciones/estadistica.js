@@ -21,7 +21,7 @@ const chartOperaciones = new Chart(ctx, {
 });
 
 const getEstadisticas = async () => {
-    const url = `/is3_moran_edgar/API/detalle/estadistica`;
+    const url = `/IS3_MORAN_EDGAR/API/detalle/estadistica`;
 
     const config = { method: "GET" }
     const response = await fetch(url, config);
