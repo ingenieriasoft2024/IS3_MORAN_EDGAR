@@ -36,6 +36,9 @@
                             <li>
                                 <a class="dropdown-item nav-link text-white " href="/IS3_MORAN_EDGAR/operaciones/estadisticas"><i class="ms-lg-0 ms-2 bi bi-plus-circle me-2"></i>ESTADISTICAS</a>
                             </li>
+                            <li>
+                                <a class="dropdown-item nav-link text-white " href="/IS3_MORAN_EDGAR/mapa"><i class="ms-lg-0 ms-2 bi bi-plus-circle me-2"></i>MAPA</a>
+                            </li>
                         
                     
                         
