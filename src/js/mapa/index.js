@@ -3,6 +3,7 @@ import L from 'leaflet';
 
 const map = L.map('map', {
     center: [14.6155198,-90.5819964],
+    center: [14.2788902,-89.9167455],
     zoom: 17,
     layers: []
 });
@@ -21,7 +22,7 @@ const icon = L.icon({
     iconSize: [35, 35]
 });
 
-L.marker([14.6155198,-90.5819964], {
+L.marker([14.6155198,-90.5819964] [14.2788902,-89.9167455], {
     icon: icon
 }).addTo(markerLayer);
 
